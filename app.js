@@ -121,6 +121,7 @@ app.shortcut('launch_shortcut', async ({shortcut, body, ack, context, client}) =
         });
     } catch (error) {
         console.error(error);
+        console.error(error.response_metadata.messages);
     }
 });
 
@@ -196,7 +197,6 @@ app.action('assign_help_request_to_me', async ({
         });
     } catch (error) {
         console.error(error);
-        console.error(error.response_metadata.messages);
     }
 })
 
