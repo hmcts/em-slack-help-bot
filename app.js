@@ -196,6 +196,7 @@ app.action('assign_help_request_to_me', async ({
         });
     } catch (error) {
         console.error(error);
+        console.error(error.response_metadata.messages);
     }
 })
 
