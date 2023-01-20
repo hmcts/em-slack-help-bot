@@ -121,7 +121,7 @@ app.shortcut('launch_shortcut', async ({shortcut, body, ack, context, client}) =
         });
     } catch (error) {
         console.error(error);
-        console.error(error.response_metadata.messages);
+        console.error(error.data.response_metadata.messages);
     }
 });
 
