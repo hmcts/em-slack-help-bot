@@ -309,6 +309,7 @@ function option(name, option) {
 }
 
 function openHelpRequestBlocks() {
+    console.log("Open Help Request Blocks");
     return {
         "title": {
             "type": "plain_text",
