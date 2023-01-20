@@ -113,7 +113,7 @@ app.shortcut('launch_shortcut', async ({shortcut, body, ack, context, client}) =
         await ack();
 
         // Un-comment if you want the JSON for block-kit builder (https://app.slack.com/block-kit-builder/T1L0WSW9F)
-        // console.log(JSON.stringify(openHelpRequestBlocks().blocks))
+         console.log(JSON.stringify(openHelpRequestBlocks().blocks))
 
         await client.views.open({
             trigger_id: shortcut.trigger_id,
