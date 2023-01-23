@@ -331,7 +331,10 @@ function openHelpRequestBlocks() {
                         "text": "Short description of the issue"
                     }
                 },
-                "label": textField("Issue summary")
+                "label": {
+				            "type": "plain_text",
+				            "text": "Issue summary"
+			              }
             },
             {
                 "type": "input",
