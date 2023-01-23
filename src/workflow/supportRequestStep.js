@@ -43,110 +43,123 @@ function createSupportRequestWorkflowStep() {
 
 function workflowStepBlocks(inputs) {
     return [
-        {
-            "type": "input",
-            "block_id": "summary",
-            "label": {
-                "type": "plain_text",
-                "text": "Issue summary"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "title",
-                "initial_value": inputs?.summary?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
-            "block_id": "description",
-            "label": {
-                "type": "plain_text",
-                "text": "Issue description"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "description",
-                "initial_value": inputs?.description?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
-            "block_id": "analysis",
-            "label": {
-                "type": "plain_text",
-                "text": "What analysis has already been done?"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "analysis",
-                "initial_value": inputs?.analysis?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
-            "block_id": "environment",
-            "label": {
-                "type": "plain_text",
-                "text": "Environment"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "environment",
-                "initial_value": inputs?.environment?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
-            "block_id": "service",
-            "label": {
-                "type": "plain_text",
-                "text": "Service affected"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "service",
-                "initial_value": inputs?.service?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
-            "block_id": "user_affected",
-            "label": {
-                "type": "plain_text",
-                "text": "User affected"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "user_affected",
-                "initial_value": inputs?.user_affected?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
-            "block_id": "date",
-            "label": {
-                "type": "plain_text",
-                "text": "Date the issue occurred"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "date",
-                "initial_value": inputs?.date?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
-            "block_id": "time",
-            "label": {
-                "type": "plain_text",
-                "text": "Time the issue occurred"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "time",
-                "initial_value": inputs?.time?.value ?? ""
-            }
-        },
+        // {
+        //     "type": "input",
+        //     "block_id": "summary",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "Issue summary"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "title",
+        //         "initial_value": inputs?.summary?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "description",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "Issue description"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "description",
+        //         "initial_value": inputs?.description?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "analysis",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "What analysis has already been done?"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "analysis",
+        //         "initial_value": inputs?.analysis?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "environment",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "Environment"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "environment",
+        //         "initial_value": inputs?.environment?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "service",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "Service affected"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "service",
+        //         "initial_value": inputs?.service?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "user_affected",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "User affected"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "user_affected",
+        //         "initial_value": inputs?.user_affected?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "date",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "Date the issue occurred"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "date",
+        //         "initial_value": inputs?.date?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "time",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "Time the issue occurred"
+        //     },
+        //     "element": {
+        //         "type": "plain_text_input",
+        //         "action_id": "time",
+        //         "initial_value": inputs?.time?.value ?? ""
+        //     }
+        // },
+        // {
+        //     "type": "input",
+        //     "block_id": "user",
+        //     "label": {
+        //         "type": "plain_text",
+        //         "text": "Ticket raiser"
+        //     },
+        //     "element": {
+        //         "type": "users_select",
+        //         "action_id": "user",
+        //         "initial_user": inputs?.user?.value ?? " ",
+        //     }
+        // }
         {
             "type": "input",
             "block_id": "user",
