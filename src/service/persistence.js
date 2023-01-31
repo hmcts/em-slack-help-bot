@@ -167,7 +167,7 @@ function defaultJiraIssueFields(summary, project, user, issueType) {
         reporter: {
             name: user // API docs say ID, but our jira version doesn't have that field yet, may need to change in future
         },
-        // customfield_10008: 'SIDM-6950'
+        customfield_10008: 'EM-4818'
     }
 }
 
