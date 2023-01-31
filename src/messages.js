@@ -313,7 +313,7 @@ function openHelpRequestBlocks() {
     return {
         "title": {
             "type": "plain_text",
-            "text": "IDAM Support Request"
+            "text": "EM Support Request"
         },
         "submit": {
             "type": "plain_text",
