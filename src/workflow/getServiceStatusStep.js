@@ -27,7 +27,7 @@ function getServiceStatusWorkflowStep() {
                     "type": "header",
                     "text": {
                         "type": "plain_text",
-                        "text": "IDAM " + envName,
+                        "text": "EM " + envName,
                     }
                 });
 
@@ -56,7 +56,7 @@ function getServiceStatusWorkflowStep() {
                 await client.chat.postEphemeral({
                     channel: reportChannelId,
                     user: step.inputs.user.value,
-                    username: 'IDAM Environment',
+                    username: 'EM Environment',
                     blocks: blocks,
                     text: 'Service status'
                 });
