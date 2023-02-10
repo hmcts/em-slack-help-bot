@@ -2,37 +2,27 @@ const fetch = require('node-fetch-retry');
 const {Service} = require("./Service");
 
 const refreshDelay = 15;
-// const services = {
-//     'AAT': getNonProdServices('aat'),
-//     'PERFTEST': getNonProdServices('perftest'),
-//     'ITHC': getNonProdServices('ithc'),
-//     'DEMO': getNonProdServices('demo'),
-//     'PROD': [
-//         new Service('idam-api', `https://idam-api.platform.hmcts.net`),
-//         new Service('idam-web-public', `https://hmcts-access.service.gov.uk`),
-//         new Service('idam-user-dashboard', `https://idam-user-dashboard.platform.hmcts.net`)
-//     ]
-// }
+
 const services = {
-    'DOCASSEMBLY': getNonProdServices('dg-docassembly-aat'),
-    'ANNOTATION': getNonProdServices('em-anno-aat'),
-    'HRS': getNonProdServices('em-hrs-api-aat'),
-    'SHOWCASE': getNonProdServices('em-show-aat'),
-    'DMSTORE': getNonProdServices('dm-store-aat'),
-    'ICP': [
-        new Service('em-api', `https://em-icp.aat.platform.hmcts.net`)
-    ]
-   
+    'AAT': getNonProdServices('aat'),
+    'PERFTEST': getNonProdServices('perftest'), 
+    'ITHC': getNonProdServices('ithc'), 
+    'DEMO': getNonProdServices('demo'), 
 }
+    
 function getAllServiceStatus() {
     return services;
 }
 
 function getNonProdServices(env) {
     return [
-        new Service('em-api', `https://${env}.service.core-compute-aat.internal`),
-        // new Service('idam-web-public', `https://idam-web-public.${env}.platform.hmcts.net`),
-        // new Service('idam-user-dashboard', `https://idam-user-dashboard.${env}.platform.hmcts.net`)
+        new Service('dg-docassembly', `http://dg-docassembly-${env}.service.core-compute-${env}.internal`),
+        new Service('em-stitching', `http://em-stitching-${env}.service.core-compute-${env}.internal`),
+        new Service('em-anno', `http://em-anno-${env}.service.core-compute-${env}.internal`),
+        new Service('dm-store', `http://dm-store-${env}.service.core-compute-${env}.internal`),
+        new Service('em-ccd-orchestrator',`http://em-ccd-orchestrator-${env}.service.core-compute-${env}.internal`),
+        new Service('em-npa', `http://em-npa-${env}.service.core-compute-${env}.internal`),
+        new Service('em-hrs-api', `http://em-hrs-api-${env}.service.core-compute-${env}.internal`),
     ]
 }
 
