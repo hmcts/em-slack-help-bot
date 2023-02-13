@@ -2,27 +2,28 @@ const fetch = require('node-fetch-retry');
 const {Service} = require("./Service");
 
 const refreshDelay = 15;
-const services = {
-    'AAT': getNonProdServices('aat'),
-    'PERFTEST': getNonProdServices('perftest'),
-    'ITHC': getNonProdServices('ithc'),
-    'DEMO': getNonProdServices('demo'),
-    'PROD': [
-        new Service('idam-api', `https://idam-api.platform.hmcts.net`),
-        new Service('idam-web-public', `https://hmcts-access.service.gov.uk`),
-        new Service('idam-user-dashboard', `https://idam-user-dashboard.platform.hmcts.net`)
-    ]
-}
 
+const services = {
+    'AAT': getServices('aat'),
+    'PERFTEST': getServices('perftest'), 
+    'ITHC': getServices('ithc'), 
+    'DEMO': getServices('demo'), 
+    'PROD': getServices('prod'), 
+}
+    
 function getAllServiceStatus() {
     return services;
 }
 
-function getNonProdServices(env) {
+function getServices(env) {
     return [
-        new Service('idam-api', `https://idam-api.${env}.platform.hmcts.net`),
-        new Service('idam-web-public', `https://idam-web-public.${env}.platform.hmcts.net`),
-        new Service('idam-user-dashboard', `https://idam-user-dashboard.${env}.platform.hmcts.net`)
+        new Service('dg-docassembly', `http://dg-docassembly-${env}.service.core-compute-${env}.internal`),
+        new Service('em-stitching', `http://em-stitching-${env}.service.core-compute-${env}.internal`),
+        new Service('em-anno', `http://em-anno-${env}.service.core-compute-${env}.internal`),
+        new Service('dm-store', `http://dm-store-${env}.service.core-compute-${env}.internal`),
+        new Service('em-ccd-orchestrator',`http://em-ccd-orchestrator-${env}.service.core-compute-${env}.internal`),
+        new Service('em-npa', `http://em-npa-${env}.service.core-compute-${env}.internal`),
+        new Service('em-hrs-api', `http://em-hrs-api-${env}.service.core-compute-${env}.internal`),
     ]
 }
 
