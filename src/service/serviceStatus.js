@@ -4,11 +4,27 @@ const {Service} = require("./Service");
 const refreshDelay = 15;
 
 const services = {
-    'AAT': getServices('aat'),
-    'PERFTEST': getServices('perftest'), 
-    'ITHC': getServices('ithc'), 
-    'DEMO': getServices('demo'), 
-    'PROD': getServices('prod'), 
+    'AAT': [ 
+        getServices('aat'),
+        new Service('em-ccd-orchestrator',`http://em-ccd-orchestrator-aat.service.core-compute-aat.internal`)
+    ],
+    'PERFTEST': [
+        getServices('perftest'), 
+        new Service('em-ccd-orchestrator',`http://em-ccd-orchestrator-perftest.service.core-compute-perftest.internal`)
+    ],
+    'ITHC': [
+        getServices('ithc'), 
+        new Service('em-ccdorc',`http://em-ccdorc-ithc.service.core-compute-ithc.internal`)
+    ],
+    'DEMO': [
+        getServices('demo'),
+        new Service('em-ccdorc',`http://em-ccdorc-demo.service.core-compute-demo.internal`)
+    ], 
+    'PROD':[ 
+        getServices('prod'), 
+        new Service('em-ccd-orchestrator',`http://em-ccd-orchestrator-prod.service.core-compute-prod.internal`)
+    ]
+    
 }
     
 function getAllServiceStatus() {
@@ -16,12 +32,12 @@ function getAllServiceStatus() {
 }
 
 function getServices(env) {
+
     return [
         new Service('dg-docassembly', `http://dg-docassembly-${env}.service.core-compute-${env}.internal`),
         new Service('em-stitching', `http://em-stitching-${env}.service.core-compute-${env}.internal`),
         new Service('em-anno', `http://em-anno-${env}.service.core-compute-${env}.internal`),
         new Service('dm-store', `http://dm-store-${env}.service.core-compute-${env}.internal`),
-        new Service('em-ccd-orchestrator',`http://em-ccd-orchestrator-${env}.service.core-compute-${env}.internal`),
         new Service('em-npa', `http://em-npa-${env}.service.core-compute-${env}.internal`),
         new Service('em-hrs-api', `http://em-hrs-api-${env}.service.core-compute-${env}.internal`),
     ]
