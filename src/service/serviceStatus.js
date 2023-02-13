@@ -4,17 +4,18 @@ const {Service} = require("./Service");
 const refreshDelay = 15;
 
 const services = {
-    'AAT': getNonProdServices('aat'),
-    'PERFTEST': getNonProdServices('perftest'), 
-    'ITHC': getNonProdServices('ithc'), 
-    'DEMO': getNonProdServices('demo'), 
+    'AAT': getServices('aat'),
+    'PERFTEST': getServices('perftest'), 
+    'ITHC': getServices('ithc'), 
+    'DEMO': getServices('demo'), 
+    'PROD': getServices('prod'), 
 }
     
 function getAllServiceStatus() {
     return services;
 }
 
-function getNonProdServices(env) {
+function getServices(env) {
     return [
         new Service('dg-docassembly', `http://dg-docassembly-${env}.service.core-compute-${env}.internal`),
         new Service('em-stitching', `http://em-stitching-${env}.service.core-compute-${env}.internal`),
