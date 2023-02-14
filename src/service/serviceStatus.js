@@ -19,7 +19,7 @@ function getCcdOrchestratorService(env) {
 if(env === 'demo' || env === 'ithc'){
     return new Service('em-ccdorc', `http://em-ccdorc-${env}.service.core-compute-${env}.internal`);
   }else{
-    return new Service('em-ccd-orchestrator', `http://em-ccd-orchestrator-${env}.service.core-compute-${env}.internal`)
+    return new Service('em-ccd-orchestrator', `http://em-ccd-orchestrator-${env}.service.core-compute-${env}.internal`);
   }
 }
 
