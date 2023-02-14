@@ -33,7 +33,7 @@ function getServices(env) {
         new Service('dm-store', `http://dm-store-${env}.service.core-compute-${env}.internal`),
         new Service('em-npa', `http://em-npa-${env}.service.core-compute-${env}.internal`),
         new Service('em-hrs-api', `http://em-hrs-api-${env}.service.core-compute-${env}.internal`),
-        getCcdServices(env)
+        getCcdOrchestratorService(env)
     ]
 }
 
