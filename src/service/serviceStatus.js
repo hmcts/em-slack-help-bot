@@ -15,7 +15,7 @@ function getAllServiceStatus() {
     return services;
 }
 
-function  getCcdOrchestratorService(env) {
+function getCcdOrchestratorService(env) {
 if(env === 'demo' || env === 'ithc'){
     return new Service('em-ccdorc', `http://em-ccdorc-${env}.service.core-compute-${env}.internal`)
   }else{
