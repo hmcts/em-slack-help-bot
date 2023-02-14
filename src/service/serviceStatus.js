@@ -17,22 +17,23 @@ function getAllServiceStatus() {
 
 function getCcdServices(env) {
 if(env === 'demo' || env === 'ithc'){
-    new Service('em-ccdorc', `http://em-ccdorc-${env}.service.core-compute-${env}.internal`),
+    return new Service('em-ccdorc', `http://em-ccdorc-${env}.service.core-compute-${env}.internal`)
   }else{
-    new Service('em-ccd-orchestrator', `http://em-ccd-orchestrator-${env}.service.core-compute-${env}.internal`),
+    return new Service('em-ccd-orchestrator', `http://em-ccd-orchestrator-${env}.service.core-compute-${env}.internal`)
   }
 }
 
 function getServices(env) {
 
     return [
-        getCcdServices(env),
+        
         new Service('dg-docassembly', `http://dg-docassembly-${env}.service.core-compute-${env}.internal`),
         new Service('em-stitching', `http://em-stitching-${env}.service.core-compute-${env}.internal`),
         new Service('em-anno', `http://em-anno-${env}.service.core-compute-${env}.internal`),
         new Service('dm-store', `http://dm-store-${env}.service.core-compute-${env}.internal`),
         new Service('em-npa', `http://em-npa-${env}.service.core-compute-${env}.internal`),
-        new Service('em-hrs-api', `http://em-hrs-api-${env}.service.core-compute-${env}.internal`)
+        new Service('em-hrs-api', `http://em-hrs-api-${env}.service.core-compute-${env}.internal`),
+        getCcdServices(env)
     ]
 }
 
