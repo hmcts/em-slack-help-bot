@@ -109,7 +109,7 @@ async function createHelpRequest(helpRequest, userEmail, issueType = JiraType.IS
         // in case the user doesn't exist in Jira use the system user
         result = await createHelpRequestInJira(helpRequest, project, systemUser, issueType);
     }
-
+    transitionHelpRequest(result, "Ready for Dev");
     return result.key
 }
 
