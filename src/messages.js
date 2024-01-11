@@ -407,6 +407,7 @@ function openHelpRequestBlocks() {
                     },
                     "options": [
                         option('Access Management', 'am'),
+                        option('Adoption'),
                         option('Architecture'),
                         option('Bulk scan', 'bulkscan'),
                         option('Bulk print', 'bulkprint'),
