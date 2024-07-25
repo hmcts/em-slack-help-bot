@@ -381,6 +381,7 @@ function openHelpRequestBlocks() {
                     },
                     "options": [
                         option('AAT / Staging', 'staging'),
+			option('Demo', 'demo'),
                         option('Preview / Dev', 'dev'),
                         option('Production'),
                         option('Perftest / Test', 'test'),
