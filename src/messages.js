@@ -381,6 +381,7 @@ function openHelpRequestBlocks() {
                     },
                     "options": [
                         option('AAT / Staging', 'staging'),
+			option('Demo', 'demo'),
                         option('Preview / Dev', 'dev'),
                         option('Production'),
                         option('Perftest / Test', 'test'),
@@ -430,6 +431,7 @@ function openHelpRequestBlocks() {
                         option('Family Public Law', 'FPL'),
                         option('Heritage'),
                         option('HMI'),
+			option('Hearing Recording Service','hrs'),
                         option('Management Information', 'mi'),
                         option('Immigration and Asylum', 'iac'),
                         option('IDAM'),
@@ -439,6 +441,7 @@ function openHelpRequestBlocks() {
                         option('Reference Data', 'refdata'),
                         option('Reform Software Engineering', 'reform-software-engineering'),
                         option('Security Operations or Secure design', 'security'),
+			option('Special Tribunals', 'sptribs'),
                         option('SSCS'),
                         option('PayBubble'),
                         option('PET'),
