@@ -2,7 +2,7 @@ const {getActionsElement, updateActionsElement, addNewActionsElement, removeActi
 
 
 describe('blockHelper', () => {
-    const contextElementText = 'View on Jira: <https://tools.hmcts.net/jira/browse/SBOX-123|SBOX-123>'
+    const contextElementText = 'View on Jira: <https://hmcts.atlassian.net/browse/SBOX-123|SBOX-123>'
     const blocks = [
         {
             type: 'section',
