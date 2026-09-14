@@ -11,7 +11,8 @@ const extractProjectRegex = new RegExp(`(${jiraProject}-[\\d]+)`)
 const jira = new JiraApi({
     protocol: 'https',
     host: 'hmcts.atlassian.net',
-    bearer: config.get('secrets.cftptl-intsvc.jira-api-token'),
+    username: config.get('secrets.cftptl-intsvc.jira-username'),
+    password: config.get('secrets.cftptl-intsvc.jira-api-token'),
     apiVersion: '2',
     strictSSL: true
 });
