@@ -89,12 +89,12 @@ async function searchForUnassignedOpenIssues() {
 }
 
 async function assignHelpRequest(issueId, email) {
-    const user = await convertEmail(email)
+    const accountId = await convertEmail(email);
 
     try {
-        await jira.updateAssignee(issueId, user)
-    } catch(err) {
-        console.log("Error assigning help request in jira", err)
+        await jira.updateAssigneeWithId(issueId, accountId);
+    } catch (err) {
+        console.log("Error assigning help request in Jira", err);
     }
 }
 
