@@ -20,7 +20,7 @@ function extractSlackLinkFromText(text) {
 }
 
 function convertJiraKeyToUrl(jiraId) {
-    return `https://tools.hmcts.net/jira/browse/${jiraId}`;
+    return `https://hmcts.atlassian.net/browse/${jiraId}`;
 }
 
 const title = (summary) => {

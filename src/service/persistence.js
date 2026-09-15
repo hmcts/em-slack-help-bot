@@ -10,8 +10,9 @@ const extractProjectRegex = new RegExp(`(${jiraProject}-[\\d]+)`)
 
 const jira = new JiraApi({
     protocol: 'https',
-    host: 'tools.hmcts.net/jira',
-    bearer: config.get('secrets.cftptl-intsvc.jira-api-token'),
+    host: 'hmcts.atlassian.net',
+    username: config.get('secrets.cftptl-intsvc.jira-username'),
+    password: config.get('secrets.cftptl-intsvc.jira-api-token'),
     apiVersion: '2',
     strictSSL: true
 });
@@ -72,7 +73,7 @@ async function assignHelpRequest(issueId, email) {
 /**
  * Extracts a jira ID
  *
- * expected format: 'View on Jira: <https://tools.hmcts.net/jira/browse/SBOX-61|SBOX-61>'
+ * expected format: 'View on Jira: <https://hmcts.atlassian.net/browse/SBOX-61|SBOX-61>'
  * @param blocks
  */
 function extractJiraIdFromBlocks(blocks) {
