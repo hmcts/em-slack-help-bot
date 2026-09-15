@@ -41,7 +41,7 @@ const jira = new JiraApi({
     base: `/ex/jira/${jiraCloudId}`,
     username: config.get('secrets.cftptl-intsvc.jira-username'),
     password: config.get('secrets.cftptl-intsvc.jira-api-token'),
-    apiVersion: '3',
+    apiVersion: '2',
     strictSSL: true
 });
 
