@@ -8,12 +8,15 @@ const systemUser = config.get('secrets.cftptl-intsvc.jira-username')
 const jiraProject = config.get('jira.project')
 const extractProjectRegex = new RegExp(`(${jiraProject}-[\\d]+)`)
 
+const jiraCloudId = config.get('secrets.cftptl-intsvc.jira-cloud-id');
+
 const jira = new JiraApi({
     protocol: 'https',
-    host: 'hmcts.atlassian.net',
+    host: 'api.atlassian.com',
+    base: `/ex/jira/${jiraCloudId}`,
     username: config.get('secrets.cftptl-intsvc.jira-username'),
     password: config.get('secrets.cftptl-intsvc.jira-api-token'),
-    apiVersion: '2',
+    apiVersion: '3',
     strictSSL: true
 });
 
@@ -110,7 +113,7 @@ async function createHelpRequest(helpRequest, userEmail, issueType = JiraType.IS
         // in case the user doesn't exist in Jira use the system user
         result = await createHelpRequestInJira(helpRequest, project, systemUser, issueType);
     }
-    transitionHelpRequest(result.key, "Ready for Dev");
+    await transitionHelpRequest(result.key, "Ready for Dev");
     return result.key
 }
 
